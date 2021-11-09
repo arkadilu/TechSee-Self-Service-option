@@ -5,13 +5,21 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 import uploadFile from '@salesforce/apex/selfServiceRequestUtils.uploadFile';
 
+import SELF_SERVICE_REQUEST_OBJECT from '@salesforce/schema/Self_Service_Request__c';
+import FIRST_NAME_FIELD from '@salesforce/schema/Self_Service_Request__c.FirstName__c';
+import LAST_NAME_FIELD from '@salesforce/schema/Self_Service_Request__c.LastName__c';
+import EMAIL_FIELD from '@salesforce/schema/Self_Service_Request__c.Email__c';
+import PHONE_FIELD from '@salesforce/schema/Self_Service_Request__c.Phone__c';
+import DESCRIPTION_FIELD from '@salesforce/schema/Self_Service_Request__c.Description__c';
+
 const OBJECT_FIELDS = [
-    'Self_Service_Request__c.FirstName__c',
-    'Self_Service_Request__c.LastName__c',
-    'Self_Service_Request__c.Email__c',
-    'Self_Service_Request__c.Phone__c',
-    'Self_Service_Request__c.Description__c',
+    FIRST_NAME_FIELD,
+    LAST_NAME_FIELD,
+    EMAIL_FIELD,
+    PHONE_FIELD,
+    DESCRIPTION_FIELD,
 ]
+
 export default class SelfServiceRequestBase extends LightningElement {
     @api recordId;
     @wire(getRecord, { recordId: '$recordId', fields: OBJECT_FIELDS }) self_service;
