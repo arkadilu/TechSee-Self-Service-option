@@ -1,0 +1,13 @@
+<template>
+    <template if:false={recordId}>
+        <lightning-file-upload label="Attach Self Service Items" name="fileUploader" record-id={caseRecordId}
+            accept={acceptedFormats} onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+    </template>
+
+    <template if:true={recordId}>
+        <div class="slds-box">
+            <p>DISPLAY RELATED FILES HERE!</p>
+        </div>
+    </template>
+</template>
