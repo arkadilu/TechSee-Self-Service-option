@@ -75,3 +75,5 @@ typings/
 # FuseBox cache
 .fusebox/
 .DS_Store
+.sfdx/indexes/lwc/custom-components.json
+.sfdx/tools/apex.db
