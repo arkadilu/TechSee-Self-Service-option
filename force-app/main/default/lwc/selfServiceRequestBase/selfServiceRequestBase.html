@@ -1,43 +1,43 @@
 <template>
-    <div style="background-color:white">
+    <div>
         <template if:false={recordId}>
-            <lightning-record-edit-form data-id="Self_Service_Request_From" object-api-name="Self_Service_Request__c"
+            <lightning-record-edit-form data-id='Self_Service_Request_From' object-api-name='Self_Service_Request__c'
                 onsubmit={handleSubmit} onsuccess={handleSuccess} onerror={handeError}>
                 <lightning-messages></lightning-messages>
                 <div>
-                    <lightning-input-field field-name="FirstName__c" required>{FirstName__c}</lightning-input-field>
-                    <lightning-input-field field-name="LastName__c" value={lastName} required></lightning-input-field>
-                    <lightning-input-field field-name="Phone__c" value={phone} required></lightning-input-field>
-                    <lightning-input-field field-name="Email__c" value={email} required></lightning-input-field>
-                    <lightning-input-field field-name="Description__c" value={description} required>
+                    <lightning-input-field field-name='FirstName__c' required>{FirstName__c}</lightning-input-field>
+                    <lightning-input-field field-name='LastName__c' value={lastName} required></lightning-input-field>
+                    <lightning-input-field field-name='Phone__c' value={phone} required></lightning-input-field>
+                    <lightning-input-field field-name='Email__c' value={email} required></lightning-input-field>
+                    <lightning-input-field field-name='Description__c' value={description} required>
                     </lightning-input-field>
                 </div>
 
-                <lightning-card title="Self Service items" icon-name="custom:custom14">
+                <lightning-card title='Self Service items' icon-name='custom:custom14'>
                     <p><b>Optionally:</b></p> please upload any of the following: images, short video, a voice recording
-                    <div class="slds-m-around_medium">
-                        <lightning-input type="file" accept=".jpg, .JPG, .PNG, .png, .mov, .mp4, .m4a" label="Attachment"
+                    <div class='slds-m-around_medium'>
+                        <lightning-input type='file' accept='.jpg, .JPG, .PNG, .png, .mov, .mp4, .m4a' label='Attachment'
                             onchange={openfileUpload}></lightning-input>
                     </div>
                     <template if:true={uploadedFiles}>
-                        <template for:each={uploadedFiles} for:item="file">
+                        <template for:each={uploadedFiles} for:item='file'>
                             <p key={file.key}>{file.filename}</p>
                         </template>
                     </template>
                 </lightning-card>
-                <lightning-button class="slds-m-top_medium" variant="brand" type="submit" label="Submit">
+                <lightning-button class='slds-m-top_medium' variant='brand' type='submit' label='Submit'>
                 </lightning-button>
             </lightning-record-edit-form>
         </template>
 
         <template if:true={recordId}>
             <lightning-record-view-form object-api-name='Self_Service_Request__c' record-id={recordId}>
-                <div class="slds-box">
-                    <lightning-output-field field-name="FirstName__c"></lightning-output-field>
-                    <lightning-output-field field-name="LastName__c"></lightning-output-field>
-                    <lightning-output-field field-name="Phone__c"></lightning-output-field>
-                    <lightning-output-field field-name="Email__c"></lightning-output-field>
-                    <lightning-output-field field-name="Description__c"></lightning-output-field>
+                <div class='slds-box'>
+                    <lightning-output-field field-name='FirstName__c'></lightning-output-field>
+                    <lightning-output-field field-name='LastName__c'></lightning-output-field>
+                    <lightning-output-field field-name='Phone__c'></lightning-output-field>
+                    <lightning-output-field field-name='Email__c'></lightning-output-field>
+                    <lightning-output-field field-name='Description__c'></lightning-output-field>
                 </div>
             </lightning-record-view-form>
         </template>

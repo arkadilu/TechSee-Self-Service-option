@@ -29,34 +29,7 @@ public with sharing class selfServiceRequestUtils implements Queueable{
     }
 
    }
-  
-    // public class customContentWrapper {
-    //     String contentVersionId;
-    //     String documentId;
-    //     String name;
-    // }
-
-    // public class customResponseWrapper {
-    //     public customResponseWrapper(Boolean success,String error){
-    //         this.success=success;
-    //         this.error=error;
-    //     }
-
-    //     Boolean success;
-    //     String error;
-    // }
-
-    // @AuraEnabled(cacheable=true)
-    // public static List<ContentDocumentLink> associateFilesWithCaseRecord(Id caseId, List<customContentWrapper> uploadedFilesList){
-    //     Id docId = '0698d000000DrUsAAK';
-
-    //     return new List<ContentDocumentLink>([
-    //         Select Id,ContentDocument.CreatedBy.Name,ContentDocument.CreatedDate,ContentDocument.Title,ContentDocument.ContentSize, ContentDocument.FileExtension
-    //         From ContentDocumentLink
-    //         Where LinkedEntityId = :docId
-    //     ]);
-    // }
-
+   
      /*
    * @method uploadFile() 
    * @desc Creates a content version from a given file's base64 and name
